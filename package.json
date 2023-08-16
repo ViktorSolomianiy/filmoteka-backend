@@ -1,0 +1,30 @@
+{
+  "name": "filmoteka-backend",
+  "version": "1.0.0",
+  "description": "PORT=5432 PASSWORD=petproj",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktorSolomianiy/filmoteka-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViktorSolomianiy/filmoteka-backend/issues"
+  },
+  "homepage": "https://github.com/ViktorSolomianiy/filmoteka-backend#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastify": "^4.21.0",
+    "pg": "^8.11.2",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
