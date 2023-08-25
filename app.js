@@ -1,4 +1,6 @@
 const fastify = require('fastify')();
+const cors = require('fastify-cors');
+
 const typeormConfig = require('./typeorm-config');
 
 const connectToDatabase = async () => {
@@ -13,6 +15,11 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+fastify.register(cors, {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+});
 
 fastify.get('/', async (request, reply) => {
   return { message: 'Hello world' };

@@ -21,6 +21,7 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "fastify": "^4.21.0",
+    "fastify-cors": "^3.0.3",
     "pg": "^8.11.2",
     "pg-promise": "^11.5.3",
     "typeorm": "^0.3.17"
