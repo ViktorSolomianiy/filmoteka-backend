@@ -1,8 +1,9 @@
 const { DataSource } = require('typeorm');
 const dotenv = require('dotenv');
+const { User } = require('./models/User');
 dotenv.config();
 
-const typeormConfig = new DataSource({
+const db = new DataSource({
   type: 'postgres',
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -11,6 +12,7 @@ const typeormConfig = new DataSource({
   database: process.env.DB_NAME,
   synchronize: true,
   logging: false,
+  entities: [User],
 });
 
-module.exports = typeormConfig;
+module.exports = db;

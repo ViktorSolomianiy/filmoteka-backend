@@ -1,7 +1,8 @@
-const { getInfo } = require('../controllers/auth');
+const { register, getInfo } = require('../controllers/auth');
 
-const routes = (fastify) => {
+const authRouter = (fastify) => {
   fastify.get('/', getInfo);
+  fastify.post('/register', register);
 };
 
-module.exports = routes;
+module.exports = authRouter;

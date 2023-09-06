@@ -1,9 +1,10 @@
 const fastify = require('fastify')();
+fastify.register(require('@fastify/sensible'));
 const cors = require('fastify-cors');
 
 const { errorHandler, notFoundHandler } = require('./errors/errorsHandler');
 const { connectToDatabase } = require('./server');
-const routes = require('./routes/auth');
+const authRouter = require('./routes/auth');
 
 fastify.setErrorHandler(errorHandler);
 fastify.setNotFoundHandler(notFoundHandler);
@@ -16,7 +17,7 @@ const startServer = async () => {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   });
 
-  routes(fastify);
+  authRouter(fastify);
 
   fastify.listen({ port: 3001, host: '0.0.0.0' }, (err, address) => {
     if (err) {
